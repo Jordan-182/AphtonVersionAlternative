@@ -1,0 +1,842 @@
+:root{
+    /* COLORS */
+    --primary-color : #C8A2C8; /* LAVANDE */
+    --secondary-color : #FAF3E0; /* BLANC CASSE */
+    --third-color : #4B5D67; /* BLEU ARDOISE */
+    /* FONTS */
+    --primary-font : 'Spectral', sans-serif;
+    --secondary-font : 'Lobster Two', sans-serif;
+    /* NAV HEIGHT */
+    --nav-height : 100px;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-size: 16px;
+    font-family: var(--primary-font);
+    background: var(--secondary-color);
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CETTE PARTIE CONCERNE LA NAV */
+
+header{
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+}
+
+nav{
+    position: fixed;
+    width: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: var(--secondary-color);
+    box-shadow: inset 0px -3px 0px var(--primary-color);
+    font-family: var(--primary-font);
+    z-index: 9;
+}
+
+.nav-icon{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.nav-icon img{
+    height: 55px;
+    width: auto;
+}
+
+.text-logo{
+    display: flex;
+    flex-direction: column;
+    color: var(--third-color);
+}
+
+.text-logo span:last-child{
+    font-family: var(--secondary-font);
+}
+
+.hamburger{
+    display: none;
+}
+
+.main-navlinks{
+    margin-left: auto;
+}
+
+.navlinks-container a{
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--third-color);
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+
+.navlinks-container a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--primary-color);
+    transition: transform 0.3s ease-out;
+}
+
+.navlinks-container a:hover::after{
+    transform: scaleX(1);
+}
+
+.mobile-nav-logo{
+    display: none;
+}
+
+/* FIN DE LA NAV */
+
+/* CETTE PARTIE CONCERNE LA STRUCTURE (CONTAINER + BANDEAUX) */
+
+.container{
+    width: 100%;
+    position: relative;
+    top: 85px;
+}
+
+.band-white{
+    background: var(--secondary-color);
+    color: var(--third-color);
+    padding: 20px 30px;
+}
+
+.band-color{
+    background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
+    padding: 20px 30px;
+}
+
+.band-color-reverse{
+    background: linear-gradient(to top, var(--primary-color), var(--third-color));
+    padding: 20px 30px;
+}
+
+.band-slogan{
+    background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
+    color: var(--secondary-color);
+    padding: 20px;
+}
+
+.band-color .title,
+.band-color .article-text,
+.band-color-reverse .title,
+.band-color-reverse .article-text{
+    color: var(--secondary-color);
+}
+
+.illustration-right{
+    width: 350px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.illustration-right img{
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.illustration-left{
+    width: 350px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.illustration-left img{
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* FIN DE LA STRUCTURE */
+
+/* CETTE PARTIE CONCERNE LA MISE EN FORME DES TEXTES GENERIQUES ET DES BOUTONS */
+
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--third-color);
+    font-family: var(--secondary-font);
+    margin-bottom: 15px;
+}
+
+.title-center{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.subtitle{
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.subtitle-left{
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.subtitle-color{
+    font-size: 1.6rem;
+    color: var(--third-color);
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.center{
+    text-align: center;
+}
+
+.article-text{
+    color: var(--third-color);
+    font-family: var(--primary-font);
+}
+
+.article-text a{
+    text-decoration: none;
+    color: inherit;
+    font-style: italic;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.cta{
+    width: 250px;
+    padding: 10px 5px;
+    margin: 20px auto 0 auto;
+    border-radius: 5px;
+    font-size: 1.03rem;
+    font-weight: bold;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    background: linear-gradient(to bottom right, var(--primary-color), var(--third-color));
+    border: 2px solid var(--third-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
+
+.cta:hover{
+    background: transparent;
+    color: var(--third-color);
+    border: 2px solid var(--third-color);
+}
+
+.cta-reverse{
+    width: 250px;
+    padding: 10px 5px;
+    margin: 15px auto 0 auto;
+    border-radius: 5px;
+    font-size: 1.03rem;
+    font-weight: bold;
+    font-family: var(--primary-font);
+    color: var(--third-color);
+    background: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
+
+.cta-reverse:hover{
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.cta-reverse-center{
+    width: 250px;
+    padding: 10px 5px;
+    margin: 5px auto 20px auto;
+    border-radius: 5px;
+    font-size: 1.03rem;
+    font-weight: bold;
+    font-family: var(--primary-font);
+    color: var(--third-color);
+    background: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.cta-reverse-center:hover{
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn{
+    width: 250px;
+    padding: 10px 5px;
+    margin: auto auto 0 auto;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    background: var(--third-color);
+    border: 2px solid var(--third-color);
+    transition: 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a .btn{
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: transparent;
+    color: var(--third-color);
+    border: 2px solid var(--third-color);
+}
+
+/* CETTE PARTIE CONCERNE LE CONTENU DU BANDEAU SLOGAN */
+
+.slogan{
+    font-size: 3.5rem;
+    font-family: var(--secondary-font);
+    text-align: center;
+    line-height: 1.3;
+}
+
+.citation-auteur{
+    font-size: 1.7rem;
+}
+
+/* FIN DU CONTENU BANDEAU SLOGAN */
+
+/* CETTE PARTIE CONCERNE LE CONTENU DU BANDEAU INTRODUCTION */
+
+.introduction{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.bloc-intro-left{
+    display: flex;
+    align-items: center;
+}
+
+.avatar{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: var(--third-color);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img{
+    width: 200px;
+    height: 200px;
+}
+
+.bloc-intro-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc-intro-right .title{
+    margin-top: 20px;
+}
+
+.intro-subtitle{
+    font-size: 1.5rem;
+    margin-top: -10px;
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+}
+
+.bloc-intro-right .article-text{
+    margin-top: 20px;
+}
+
+/* FIN DU CONTENU DU BANDEAU INTRODUCTION */
+
+/* CETTE PARTIE CONCERNE LE CONTENU DU BANDEAU SERVICES */
+
+.services{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.services-list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.service-card{
+    border: 2px solid var(--secondary-color);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Effet de flou */
+    -webkit-backdrop-filter: blur(10px); /* Support pour Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure pour l'effet de verre */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 340px;
+    height: 560px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .article-text{
+    flex-grow: 1;
+}
+
+.service-card:hover{
+    transform: translateY(-5px);
+}
+
+.service-card-illustration{
+    height: 250px;
+    width: 250px;
+    margin-bottom: 15px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* FIN DU CONTENU DU BANDEAU SERVICES */
+
+/* CETTE PARTIE CONCERNE LE CONTENU DU BANDEAU AVIS CLIENTS */
+
+.avis{
+    display: flex;
+    flex-direction: column;
+}
+
+.avis-list{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 20px;
+}
+
+.avis-card{
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(to bottom right, var(--primary-color), var(--third-color));
+    color: black;
+    border-radius: 15px;
+    position: relative;
+    padding: 20px;
+    z-index: 2;
+    flex: none;
+    transition: 0.3s ease;
+}
+
+.avis-card:hover{
+    transform: translateY(-5px);
+}
+
+.avis-card::before{
+    content: '';
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    top: 3px;
+    left: 3px;
+    background: #ffffff;
+    border-radius: 12px;
+    z-index: -1;
+    flex: none;
+}
+
+.avis .title{
+    text-align: center;
+}
+
+.avis-name{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 5px 0 10px 0;
+}
+
+.avis-note{
+    margin-bottom: 15px;
+}
+
+.avis-text{
+    margin-bottom: 15px;
+}
+
+.avis-date{
+    color: gray;
+    text-align: end;
+}
+
+/* FIN DU CONTENU DU BANDEAU AVIS CLIENTS */
+
+/* CETTE PARTIE CONCERNE LE CONTENU DU BANDEAU CONTACT */
+
+.contact-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact .title{
+    text-align: center;
+}
+
+.bloc-contact-left{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bloc-contact-left .subtitle{
+    margin-bottom: 10px;
+}
+
+.coordonnees{
+    text-align: center;
+}
+
+.coordonnees a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.horaires ul li{
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -25px;
+}
+
+.infos ul li{
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.info .article-text{
+    text-align: center;
+}
+
+.social{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-liens{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.article-text i{
+    font-size: 1.2rem;
+}
+
+.social .article-text i{
+    font-size: 2rem;
+}
+
+iframe{
+    width: 100%;
+    height: 320px;
+}
+
+/* FIN DU CONTENU DU BANDEAU CONTACT */
+
+/* PAGE CONTACT */
+
+.contact-page-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc-contact-page-1{
+    margin-top: 10px
+}
+
+.bloc-contact-page-2{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.bloc-contact-page-3{
+    margin-top: 15px;
+}
+
+/* CETTE PARTIE CONCERNE LE FOOTER */
+
+.footer{
+    width: 100%;
+    background: var(--secondary-color);
+    color: var(--third-color);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 45px;
+}
+
+/* FIN DU FOOTER */
+
+@media only screen and (max-width: 720px){
+
+    .text-logo{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hamburger{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        background: transparent;
+        align-items: center;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .hamburger span{
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--third-color);
+        position: absolute;
+        pointer-events: none;
+        transition: opacity 0.3s 0.15s ease-out;
+    }
+
+    .hamburger span:nth-child(1),
+    .hamburger span:nth-child(3){
+        transition: transform 0.3s ease-out;
+    }
+
+    .hamburger span:nth-child(1){
+        transform: translateY(7px);
+    }
+
+    .hamburger span:nth-child(3){
+        transform: translateY(-7px);
+    }
+
+    .hamburger.open span:nth-child(1){
+        transform: translate(0) rotate(135deg);
+    }
+
+    .hamburger.open span:nth-child(2){
+        opacity: 0;
+        transition: opacity 0s ease-out;
+    }
+
+    .hamburger.open span:nth-child(3){
+        transform: translate(0) rotate(-135deg);
+    }
+    
+    .navlinks-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background: var(--secondary-color);
+        top: 100%;
+        width: 100%;
+        right: 0;
+        height: 100vh;
+        transform: translate(100%);
+        transition: transform 0.3s ease-out;
+     }
+
+    .open{
+        transform: translate(0%);
+     }
+
+    .navlinks-container a{
+        color: var(--third-color);
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .navlinks-container a:first-child{
+        margin-top: -100px;
+    }
+
+    .mobile-nav-logo{
+        display: block;
+        position: relative;
+        transform: translateY(100px);
+    }
+
+    .band-slogan{
+        max-height: 100dvh;
+    }
+
+    .slogan{
+        font-size: 3rem;
+        font-family: var(--secondary-font);
+        text-align: center;
+        padding: 10px 0;
+        line-height: 1.2;
+    }
+
+    .introduction{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .bloc-intro-right .title{
+        margin-top: 0;
+    }
+
+    .bloc-intro-right .btn{
+        margin-top:15px;
+    }
+
+    .services{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services-list{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services-list{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .service-card{
+        width: calc(100% - 30px);
+        margin: 0 auto 0 auto;
+    }
+
+    .service-card:last-child{
+        margin-bottom: 0;
+    }
+
+    .avis-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .bloc-contact-left{
+        order: 2;
+        margin-top: 5px;
+        padding-left: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bloc-contact-left .subtitle{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .bloc-contact-left .cta-reverse{
+       margin: 15px auto 5px auto;
+    }
+
+    .infos{
+        margin-top: 0;
+    }
+
+    .illustration-right,
+    .illustration-left{
+        margin: 0 auto 10px auto;
+        float: none;
+    }
+
+    .contact-page-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bloc-contact-page-1{
+        margin-top: 10px
+    }
+    
+    .bloc-contact-page-2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .bloc-contact-page-3{
+        margin-top: 15px;
+    }
+}
