@@ -223,39 +223,133 @@ nav{
 
 /* FIN DU CONTENU DU BANDEAU INTRODUCTION */
 
+/* CETTE PARTIE CONCERNE LE BANDEAU AVIS */
+
+.avis{
+    padding: 30px;
+    background: linear-gradient(to bottom right , var(--third-color) , var(--primary-color));
+}
+
+.avis-title{
+    font-size: 2rem;
+    color: #ffffff;
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avis-list{
+    width: calc(100% - 60px);
+    margin: 10px auto;
+}
+
+.carousel{
+    border: 2px solid #ccc;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider{
+    height: 100%;
+    display: flex;
+    width: 600%; /* A changer selon nombre de sections : 600% pour 6 sections de 100% en width */
+    transition: all 0.3s;
+}
+
+.slider section{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 0 80px;
+}
+
+.avis-card{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.avis-name{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 5px 0 10px 0;
+}
+
+.avis-note{
+    margin-bottom: 20px;
+}
+
+.avis-text{
+    margin-bottom: 15px;
+}
+
+.avis-date{
+    color: gray;
+    text-align: end;
+}
+
+.controls .arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.controls .arrow i{
+    font-size: 1.8rem;
+}
+
+.arrow.left{
+    left: 15px;
+}
+
+.arrow.right{
+    right: 15px;
+}
+
+.controls ul{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.controls ul li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border : 2px solid #4B5D67;
+    background: #4B5D67;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.controls ul li.selected{
+    background: transparent;
+}
+
+/* FIN DU BANDEAU AVIS */
+
 /* CETTE PARTIE CONCERNE LE BANDEAU SERVICES */
 
 .services{
     height: 500px;
     padding: 30px;
-    background: linear-gradient(to bottom right , var(--third-color) , var(--primary-color));
-}
-
-.services-title{
-    font-size: 2rem;
-    color: #ffffff;
-    font-family: var(--secondary-font);
-    text-align: center;
-}
-
-/* FIN DU BANDEAU SERVICE */
-
-/* CETTE PARTIE CONCERNE LE BANDEAU AVIS */
-
-.avis{
-    height: 500px;
-    padding: 30px;
     background: #ffffff;
 }
 
-.avis-title{
+.services-title{
     font-size: 2rem;
     color: var(--third-color);
     font-family: var(--secondary-font);
     text-align: center;
 }
 
-/* FIN DU BANDEAU AVIS */
+/* FIN DU BANDEAU SERVICES */
 
 /* CETTE PARTIE CONCERNE LE BANDEAU CONTACT */
 
