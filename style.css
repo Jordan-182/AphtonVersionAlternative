@@ -370,7 +370,7 @@ nav{
 
 .services{
     padding: 30px;
-    background: #ffffff;
+    background: var(--secondary-color);
 }
 
 .services-title{
@@ -393,6 +393,7 @@ nav{
     width: 350px;
     height: 545px;
     border: 2px solid var(--third-color);
+    background-color: #ffffff;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -544,6 +545,14 @@ nav{
 
 /* FIN DU FOOTER */
 
+@media only screen and (max-width: 1270px){
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media only screen and (max-width: 960px){
     .avis-list{
         width: 700px;
@@ -664,6 +673,17 @@ nav{
         order: -1;
     }
 
+    .contact-top{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .infos{
+        width: calc(100% - 80px);
+        padding: 0 40px;
+    }
+
     .footer{
         display: flex;
         flex-direction: column;
@@ -681,6 +701,15 @@ nav{
 
     .slider section{
         padding: 0 45px;
+    }
+
+    .bloc-contact-text{
+        width: calc(100% - 60px);
+        padding: 0 30px;
+    }
+
+    .map iframe{
+        width: 100%;
     }
 }
 
