@@ -57,10 +57,12 @@ nav{
     display: flex;
     flex-direction: column;
     color: #ffffff;
+    font-size: 1.1rem;
 }
 
 .text-logo span:last-child{
     font-family: var(--secondary-font);
+    font-size: 1rem;
 }
 
 .hamburger{
@@ -122,6 +124,34 @@ nav{
     color: var(--third-color);
 }
 
+.subtitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+    margin-bottom: 10px;
+}
+
+.btn{
+    padding: 10px;
+    background: var(--third-color);
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    /* font-size: 1.1rem; */
+    font-weight: bold;
+    margin-top: auto;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    background: transparent;
+    border: 2px solid var(--third-color);
+    color: var(--third-color);
+}
+
 /* CETTE PARTIE CONCERNE LE CONTENU DU BANDEAU SLOGAN */
 
 .slogan{
@@ -157,7 +187,7 @@ nav{
 .introduction {
     background: #ffffff;
     color: var(--third-color);
-    padding: 30px;
+    padding: 30px 40px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -239,7 +269,7 @@ nav{
 }
 
 .avis-list{
-    width: 65%;
+    width: 900px;
     margin: 10px auto;
 }
 
@@ -339,7 +369,6 @@ nav{
 /* CETTE PARTIE CONCERNE LE BANDEAU SERVICES */
 
 .services{
-    height: 500px;
     padding: 30px;
     background: #ffffff;
 }
@@ -353,16 +382,30 @@ nav{
 
 .services-list{
     width: 100%;
-    height: 400px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
     margin-top: 15px;
 }
 
 .service-card{
-    width: 300px;
-    height: 100%;
+    width: 350px;
+    height: 545px;
     border: 2px solid var(--third-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover{
+    transform: translateY(-5px);
+}
+
+.service-card img{
+    margin: 0 auto 10px auto;
 }
 
 /* FIN DU BANDEAU SERVICES */
@@ -370,7 +413,6 @@ nav{
 /* CETTE PARTIE CONCERNE LE BANDEAU CONTACT */
 
 .contact{
-    height: 500px;
     padding: 30px;
     background: linear-gradient(to top left , var(--third-color) , var(--primary-color));
 }
@@ -380,6 +422,10 @@ nav{
     color: #ffffff;
     font-family: var(--secondary-font);
     text-align: center;
+}
+
+.contact iframe{
+    border-radius: 5px;
 }
 
 /* FIN DU BANDEAU CONTACT */
@@ -396,6 +442,26 @@ nav{
 }
 
 /* FIN DU FOOTER */
+
+@media only screen and (max-width: 960px){
+    .avis-list{
+        width: 700px;
+    }
+
+    .slider section{
+        padding: 0 35px;
+    }
+
+    .avis-card{
+        margin-top: -20px;
+    }
+}
+
+@media only screen and (max-width: 760px){
+    .avis-list{
+        width: 600px;
+    }
+}
 
 @media only screen and (max-width: 720px){
 
@@ -490,9 +556,57 @@ nav{
 
     .introduction{
         flex-direction: column;
+        padding: 30px;
     }
 
     .avatar{
         order: -1;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 660px){
+    .avis-list{
+        width: 500px;
+    }
+
+    .carousel{
+        height: 550px;
+    }
+
+    .slider section{
+        padding: 0 45px;
+    }
+}
+
+@media only screen and (max-width: 560px){
+    .avis-list{
+        width: 400px;
+    }
+
+    .carousel{
+        height: 550px;
+    }
+
+    .slider section{
+        padding: 0 45px;
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .avis-list{
+        width: 350px;
+    }
+
+    .carousel{
+        height: 600px;
+    }
+
+    .slider section{
+        padding: 0 40px;
     }
 }
